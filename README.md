@@ -1,6 +1,6 @@
 ---
 description: >-
-  Software developed for NASA's Hackathon, as part of the challenge proposed in
+  Software developed for NASA Hackathon, as part of the challenge proposed in
   2019.
 ---
 
