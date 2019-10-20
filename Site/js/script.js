@@ -70,23 +70,23 @@ particlesJS("particles-js", {
 			}
 			, "polygon": {
 				"nb_sides": 4
-			}
-			, "image": {
+			
+}			, "image": {
 				"src": "img/github.svg", "width": 100, "height": 100
 			}
 		}
 		, "opacity": {
-			"value":0.2419226793140727, "random":false, "anim": {
+			"value":0.2019226793140727, "random":false, "anim": {
 				"enable": false, "speed": 7.9120879120879115, "opacity_min": 0.1, "sync": false
 			}
 		}
 		, "size": {
-			"value":4.5, "random":true, "anim": {
+			"value":5.5, "random":true, "anim": {
 				"enable": false, "speed": 40, "size_min": 0.1, "sync": false
 			}
 		}
 		, "line_linked": {
-			"enable": true, "distance": 120, "color": "#f4f4f4", "opacity": 0.19546529723245905, "width": 1.2
+			"enable": false, "distance": 120, "color": "#f4f4f4", "opacity": 0.19546529723245905, "width": 1.2
 		}
 		, "move": {
 			"enable":true, "speed":2.5, "direction":"none", "random":false, "straight":false, "out_mode":"out", "bounce":false, "attract": {
@@ -97,7 +97,7 @@ particlesJS("particles-js", {
 	, "interactivity": {
 		"detect_on":"window", "events": {
 			"onhover": {
-				"enable": true, "mode": "grab"
+				"enable": false, "mode": "grab"
 			}
 			, "onclick": {
 				"enable": true, "mode": "push"
@@ -181,7 +181,7 @@ $(".masthead button").on('click', function(){
 	var 	 		 offset2 = $(window).height() * 2/6;
 	var 				about = $("#about").offset().top;
 	var 		portfolio = $("#portfolio").offset().top;
-	// var experience = $("").offset().top;
+	var 				team  = $("#team").offset().top;
 	var 			contact = $("#contact").offset().top;
 
 	// $(this).addClass("active");
@@ -205,7 +205,7 @@ $(".masthead button").on('click', function(){
 			}
 		});
 
-		if($("#about .b").hasClass("animationStart")){
+		if($(".b").hasClass("animationStart")){
 			bars();
 		}
 	}
@@ -219,6 +219,10 @@ $(".masthead button").on('click', function(){
 		if(documentTop >= contact-offset2){
 			clearMenu();
 			$("a[href='#contact']").addClass("active");
+		}
+		else if(documentTop >= team-offset2){
+			clearMenu();
+			$("a[href='#team']").addClass("active");
 		}
 		else if(documentTop >= portfolio-offset2){
 			clearMenu();

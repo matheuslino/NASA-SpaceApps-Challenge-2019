@@ -20,7 +20,7 @@ Global vars
   --pink:       #E31B6D;
   --sunset:     #985E6D;
   --oxblood:    #76323F;
-  --testes:     #522640;
+  --darkRed:    #522640;
 
   font-size: 16px;
 }
@@ -104,16 +104,17 @@ Animated background
   position:absolute;
   width: 100%; height: 100%;
   /*background-image: linear-gradient(rgb(82, 38, 64) 15%, rgb(32, 48, 64));*/
-  background-image: linear-gradient(rgb(82, 38, 64) 15%, rgb(32, 48, 64));
+  /*background-image: linear-gradient(rgb(82, 38, 64) 15%, rgb(32, 48, 64));*/
+  /*https://i.pinimg.com/originals/8f/bd/8a/8fbd8a372677268e4bd9e6f30145a5af.jpg*/
+  background-color: rgba(27, 36, 47, 1) !important;
   background:  linear-gradient(
     to bottom,
-    rgba(0, 15, 32, 0.97),
-    rgba(0, 66, 78, 0.9) 15%,
-    /*rgba(62, 18, 44, 0.97) 15%,*/
-    rgba(0, 15, 32, 1) 85%
-    ),url('../img/header.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+    rgba(27, 36, 47, .97),
+    rgba(18, 83, 143, .4) 10%,
+    rgba(27, 36, 47, 1) 90%
+    ),url('../img/bg.jpg');
+  background-repeat: repeat-x;
+  background-size: initial;
   background-position: 50% 50%;
   z-index: 0;
 }
@@ -157,7 +158,6 @@ Animated background
 /*-------------------------------------------------------
 Navbar
 --------------------------------------------------------- */
-
 nav{
   background: transparent;
   transition: 0.6s !important;
@@ -175,6 +175,10 @@ nav{
   opacity: 1;
 }
 
+.navbar-brand{
+  font-family: 'Bebas' !important;
+  font-size: 1.5em;
+}
 .navbar-brand:hover{
   text-shadow: 4px 4px 8px var(--primary);
   transition: 0.6s;
@@ -242,7 +246,6 @@ nav{
 /*--------------------------------------------------------
 Header
 --------------------------------------------------------- */
-
 .masthead {
   height: 100vh;
   min-height: 500px;
@@ -274,12 +277,62 @@ Header
 
 #presentationName{
   font-weight: bold;
-  color: var(--paper);  
+  color: var(--paper);
   white-space: nowrap;
 }
 
 .lead{
   /*font-size: 1.5rem;*/
+}
+
+.loader
+{
+  position: relative;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);*/
+}
+
+@font-face {
+  font-family: "Bebas";
+  src: url("../fonts/Bebas.ttf");
+}
+
+.loader h1
+{
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: 'Bebas' !important;
+
+  font-weight: bold;
+  font-size: 9em;
+  color: rgba(255,255,255, .9);
+  background-image: url(../img/wave.png);
+  background-size: .9em;
+  background-repeat: repeat-x;
+  -webkit-background-clip: text;
+  animation: animate 15s linear infinite;
+}
+
+@keyframes animate
+{
+  0%
+  {
+    background-position: left 0 top 150%;
+  }
+  40%
+  {
+    background-position: left 40% top 90%;
+  }
+  80%
+  {
+    background-position: left 80% top 90%;     
+  }
+  100%
+  {
+    background-position: left 105% top 150%;    
+  } 
 }
 
 /*-------------------------------------------------------
@@ -443,27 +496,8 @@ About
   background: white !important;
 }
 
-#about .circle {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  padding-bottom: 95.5%;
-  background:rgba(0,0,0,0.97) url('../img/matheus.png');
-  background-size: 105%;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  border: 6px solid var(--darkGreen);
-  box-shadow:
-  0 0 1px 14px rgba(0, 131, 143,.15),
-  0 0 1px 26px rgba(0, 131, 143,.1);
-  transition: 1s;
-}
-
-#about .circle:hover{
-  box-shadow: 
-  0 0 1px 18px rgba(0, 131, 143,.15),
-  0 0 1px 45px rgba(0, 131, 143,.05);
+.mobile{
+  width: 90%;
 }
 
 #about .box{
@@ -479,7 +513,7 @@ About
 }
 
 /*-------------------------------------------------------
-About - Skill
+About - Resources
 --------------------------------------------------------- */
 
 .skillbar {
@@ -487,8 +521,9 @@ About - Skill
   display:block;
   margin-bottom:15px;
   width:100%;
-  background:#eee;
+  background: rgba(255, 255, 255, .9);
   height:1.8em;
+  border: thin solid #efefef;
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
@@ -508,7 +543,7 @@ About - Skill
   position:absolute;
   top:0;
   left:0;
-  width:110px;
+  width:140px;
   font-weight:bold;
   font-size:13px;
   color:#ffffff;
@@ -914,7 +949,7 @@ Contact
 }
 
 /*-------------------------------------------------------
-COntact- Divider
+Contact- Divider
 --------------------------------------------------------- */
 
 .sep4 {
@@ -932,11 +967,11 @@ COntact- Divider
 }
 
 #contact svg{
-  background: var(--dark1) !important;
+  background: var(--dark) !important;
 }
 
 #contact path{
-  fill: var(--paper);/*var(--dark1) !important;*/
+  fill: var(--white);/*var(--dark1) !important;*/
   stroke: none;
 }
 
@@ -951,28 +986,32 @@ Experience
 /*-------------------------------------------------------
 Experience- Divider
 --------------------------------------------------------- */
+#experience svg{
+  background: var(--white) !important;
+}
 
-/*svg-separator{
-  display: block;
-  background: 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 9;
-  -webkit-transform: translateY(-100%) translateY(2px);
-  transform: translateY(-100%) translateY(2px);
-  width: 100%;
-  }*/
+#experience path{
+  fill: var(--paper);/*var(--dark1) !important;*/
+  stroke: none;
+}
 
-  #experience svg{
-    background: var(--white) !important;
-  }
-
-  #experience path{
-    fill: var(--paper);/*var(--dark1) !important;*/
-    stroke: none;
-  }
+/*-------------------------------------------------------
+Team
+--------------------------------------------------------- */
+.boxShadow{
+  box-shadow:
+  3px 6px 10px 5px rgba(73, 78, 107, 0.35);
+}
+#team .divider{
+  background: var(--paper);
+}
+#poly-4{
+  opacity: 1;
+  fill: var(--white);
+}
+#team img{
+  max-width: 30em;
+}
 
 /*-------------------------------------------------------
 Footer
