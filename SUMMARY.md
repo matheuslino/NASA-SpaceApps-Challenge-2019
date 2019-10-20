@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [NASA Space Apps Challenge 2019](README.md)
 
