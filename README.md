@@ -1,10 +1,6 @@
----
-description: >-
+# NASA Space Apps Challenge 2019
   Software developed for NASA Hackathon, as part of the challenge proposed in
   2019.
----
-
-# NASA Space Apps Challenge 2019
 
 ### About
 
