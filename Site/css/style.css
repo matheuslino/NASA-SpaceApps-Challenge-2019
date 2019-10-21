@@ -38,15 +38,10 @@ body{
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 68em) {
-  {
-    /*font-size: 80%;*/
-  }
-}
-
-@media only screen and (orientation:landscape){
-  body {
-  }
+@media (max-width: 768px){
+	.loader h1{
+		font-size: 5em !important;
+	}
 }
 
 a[href="#top"]{
@@ -103,19 +98,16 @@ Animated background
 #particles-js{
   position:absolute;
   width: 100%; height: 100%;
-  /*background-image: linear-gradient(rgb(82, 38, 64) 15%, rgb(32, 48, 64));*/
-  /*background-image: linear-gradient(rgb(82, 38, 64) 15%, rgb(32, 48, 64));*/
-  /*https://i.pinimg.com/originals/8f/bd/8a/8fbd8a372677268e4bd9e6f30145a5af.jpg*/
   background-color: rgba(27, 36, 47, 1) !important;
   background:  linear-gradient(
     to bottom,
     rgba(27, 36, 47, .97),
     rgba(18, 83, 143, .4) 10%,
-    rgba(27, 36, 47, 1) 90%
+    rgba(27, 36, 47, 1) 100%
     ),url('../img/bg.jpg');
-  background-repeat: repeat-x;
+  background-repeat: round;
   background-size: initial;
-  background-position: 50% 50%;
+  /*background-position: 50% 50%;*/
   z-index: 0;
 }
 
@@ -288,9 +280,6 @@ Header
 .loader
 {
   position: relative;
-  /*top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);*/
 }
 
 @font-face {
@@ -307,10 +296,10 @@ Header
 
   font-weight: bold;
   font-size: 9em;
-  color: rgba(255,255,255, .9);
-  background-image: url(../img/wave.png);
-  background-size: .9em;
-  background-repeat: repeat-x;
+  color: rgba(255,255,255, .83);
+  background-image: url(../img/wave2.gif);
+  /*background-size: .9em;*/
+  background-repeat: round;
   -webkit-background-clip: text;
   animation: animate 15s linear infinite;
 }
@@ -829,64 +818,6 @@ Portfolio
   cursor: pointer;
 }
 
-/*#projectView .gallery .before:hover, #projectView .gallery .next:hover{
-  background: rgba(0,0,0,.2);
-  font-size: 4em;
-  box-shadow: 0 0 10px rgba(0,0,0,.2);
-  cursor: pointer;
-}
-
-#projectView .gallery .before:hover{
-  left: 0;
-}
-
-#projectView .gallery .next:hover{
-  right: 0;
-}
-
-#projectView .gallery .before, #projectView .gallery .next{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  max-width: 1.3em;
-  max-height: 32em;
-  text-align: center;
-  font-size: 3em;
-  z-index: 2;
-  background: rgba(0,0,0,.1);
-  color: var(--paper);
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
-  transition: .4s;
-}
-
-#projectView .gallery .before{
-  float: left;
-  left: -8px;
-  border-radius: 0 50% 50% 0;
-}
-
-#projectView .gallery .next{
-  float: right;
-  right: -8px;
-  border-radius: 50% 0 0 50%;
-}
-
-#projectView .gallery{
-  width: 100%; 
-  overflow: hidden; 
-  height: 32em;
-  position: relative;
-}
-
-#projectView .gallery img{
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  display: none;
-  left: 0;
-  }*/
-
-
 /*-------------------------------------------------------
 Contact
 --------------------------------------------------------- */
@@ -909,17 +840,21 @@ Contact
   word-spacing: .5em;
 }
 
-#email, #linkedin, #github, #codepen{
+#github{
   transition: .4s;
-  font-size: .9em;
+  display: inline-block;
+  width: 100%;
   opacity: .8;
+  padding: 1em;
+  text-decoration: none;
+  background: var(--primary);
+  font-weight: 900 !important;
+  color: white !important;
 }
 
-#email:hover, #linkedin:hover, #github:hover, #codepen:hover{
-  background: var(--primary);
-  padding: 0 1em;
-  opacity: 1;
-  font-weight: 900 !important;
+#github:hover{
+	padding-right: 1em;
+	background: #00505C;
 }
 
 #contact input, #contact textarea{
@@ -1027,20 +962,4 @@ footer .container-fluid{
   color: var(--primary);
   padding: 0 .3em;
 }
-
-/*
-#linkedin:hover{
-  color: #0073b1 !important;
-  opacity: 1;
-}
-
-#github:hover{
-  color: #555 !important;
-  opacity: 1;
-}
-
-#codepen:hover{
-  color: var(--success) !important;
-  opacity: 1;
-  }*/
 

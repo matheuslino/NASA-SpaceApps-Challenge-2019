@@ -216,11 +216,7 @@ $(".masthead button").on('click', function(){
 		var documentTop = $(document).scrollTop();
 
 		// Update Menu Link
-		if(documentTop >= contact-offset2){
-			clearMenu();
-			$("a[href='#contact']").addClass("active");
-		}
-		else if(documentTop >= team-offset2){
+		if(documentTop >= team-offset2){
 			clearMenu();
 			$("a[href='#team']").addClass("active");
 		}
