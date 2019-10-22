@@ -47,8 +47,8 @@ body{
 a[href="#top"]{
   padding:10px;
   position:fixed;
-  top: 90%;
-  right:40px;
+  bottom: 0;
+  right:.2em;
   color: var(--lavendar);
   display:none;
   font-size: 30px;
